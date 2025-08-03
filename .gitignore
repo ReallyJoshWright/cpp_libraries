@@ -1,5 +1,7 @@
 target/
+zig-out/
 .cache/
+.zig-cache/
 
 app
 app.exe
