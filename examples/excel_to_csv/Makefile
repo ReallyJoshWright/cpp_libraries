@@ -12,7 +12,7 @@ app.exe: main.cpp
 	@cl /std:c++latest /EHsc /Zi /W4 /MDd \
 		/I"../../include" \
 		main.cpp \
-		/link /LIBPATH:"../../windows/lib" excel_to_csv.lib \
+		/link /LIBPATH:"../../windows/lib" excel_to_csv.dll.lib \
 		/Feapp.exe
 
 .PHONY: clean run windows windows_run windows_clean
