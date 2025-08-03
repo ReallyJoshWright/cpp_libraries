@@ -1,3 +1,7 @@
+ifeq ($(OS),Windows_NT)
+SHELL = cmd.exe
+endif
+
 all: app
 
 app: main.cpp
@@ -10,10 +14,9 @@ app: main.cpp
 
 app.exe: main.cpp
 	@cl /std:c++latest /EHsc /Zi /W4 /MDd \
-		/I"../../include" \
-		main.cpp \
-		/link /LIBPATH:"../../windows/lib" excel_to_csv.dll.lib \
-		/Feapp.exe
+		/I"../..\include" \
+		main.cpp /Feapp.exe \
+		/link /LIBPATH:"../../windows/lib" excel_to_csv.dll.lib
 
 .PHONY: clean run windows windows_run windows_clean
 
