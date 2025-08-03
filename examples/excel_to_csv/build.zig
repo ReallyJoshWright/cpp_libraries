@@ -25,6 +25,13 @@ pub fn build(b: *Build) void {
 
     exe.linkLibCpp();
     exe.addIncludePath(b.path("../../include"));
+
+    // if (target.result.os.tag == std.Target.Os.Tag.windows) {
+    //     exe.addLibraryPath(b.path("../../windows/lib"));
+    // } else if (target.result.os.tag == std.Target.Os.Tag.linux) {
+    //     exe.addLibraryPath(b.path("../../linux/lib"));
+    // }
+
     exe.addLibraryPath(b.path("../../linux/lib"));
     // exe.addLibraryPath(b.path("../../windows/lib"));
     exe.linkSystemLibrary("excel_to_csv");
