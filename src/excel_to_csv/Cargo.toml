@@ -1,0 +1,11 @@
+[package]
+name = "excel_to_csv"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+calamine = "0.29"
+csv = "1.3"
